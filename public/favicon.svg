@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Midnight Black Squircle Background -->
+  <rect width="512" height="512" rx="128" fill="#0D0E12"/>
+  <rect x="4" y="4" width="504" height="504" rx="124" stroke="rgba(255, 255, 255, 0.08)" stroke-width="8"/>
+  
+  <!-- Architectural Sculptural "T" Monogram -->
+  <path d="M128 128H384V212H296V384H216V212H128V128Z" fill="#FFFFFF"/>
+  <path d="M216 172L256 128H296L256 212H216V172Z" fill="#E2E4E9"/>
+  <path d="M128 212L168 172H216V212H128Z" fill="#D1D5DB"/>
+
+  <!-- Signature Pale Lemon Typography Punctuation Accent -->
+  <circle cx="376" cy="376" r="28" fill="#F4F36A"/>
+</svg>
