@@ -1,0 +1,669 @@
+# TYPEMUSE — AI Font Theme Finder
+### Master Development Prompt · Creative Direction V1
+
+## 1. Project Overview
+
+Build **TYPEMUSE**, a minimalist, AI-powered font discovery website.
+
+The concept is simple:
+
+A user describes a theme, mood, aesthetic, brand personality or design direction, and an AI agent recommends different typefaces that match that description.
+
+For example:
+
+**User input:** `Bold theme — IMPACT`
+
+Possible recommendations:
+- Anton — heavy, condensed and commanding.
+- Bebas Neue — tall, bold and athletic.
+- Archivo Black — strong, confident and modern.
+- Impact — compact, unmistakably heavy and attention-grabbing.
+
+Other possible searches:
+- Luxury fashion editorial
+- Cyberpunk futuristic
+- Soft and romantic
+- Retro 90s aesthetic
+- Minimalist architecture
+- Playful children's brand
+- Elegant restaurant branding
+- Futuristic technology company
+
+The AI should interpret the user's intention and recommend real, usable fonts.
+
+**Important:** This is an AI font discovery and recommendation tool, not a system that invents downloadable font files.
+
+---
+
+## 2. Creative Direction
+
+The website should feel like a premium typography playground.
+
+The visual identity should be:
+- Minimalist
+- Modern
+- Bright
+- Playful
+- Elegant
+- Interactive
+- Experimental without being chaotic
+
+The design should borrow the spacious, immersive feel of VEIL, but TYPEMUSE should have its own identity.
+
+### Colour palette
+
+| Element | Colour | Hex |
+|---|---|---|
+| Background | Pure white | #FFFFFF |
+| Primary text | Midnight black | #101116 |
+| Main accent | Soft lemon | #F4F36A |
+| Pale accent | Light lemon | #FBFBCB |
+| Secondary text | Cool grey | #777982 |
+| Glass surfaces | Translucent white | rgba(255,255,255,0.72) |
+| Borders | Soft neutral | rgba(16,17,22,0.09) |
+| Shadows | Soft charcoal | rgba(16,17,22,0.07) |
+
+Use white as the dominant colour.
+
+Midnight black should establish contrast, while lemon should be used for highlights, focus states, small decorative details and selected interactive elements.
+
+Do not flood the interface with yellow. Avoid neon colours and excessive gradients.
+
+### Typography
+
+Use:
+- A clean modern sans-serif for the interface.
+- A distinctive display font for the TYPEMUSE wordmark.
+- The actual recommended typefaces for font previews.
+
+The font recommendations should provide the visual variety of the experience.
+
+---
+
+## 3. Website Structure — One Hero Page Only
+
+This project should be a single-screen experience.
+
+Do not create:
+- A dashboard.
+- A blog.
+- A pricing page.
+- A navigation-heavy website.
+- Multiple landing pages.
+- An unnecessary sidebar.
+
+The entire experience should revolve around the central font finder.
+
+### Background: Floating Typography
+
+The white background should feature scattered letters and typographic characters around the edges of the screen.
+
+This is one of the most important visual elements.
+
+Create a field containing:
+- Uppercase letters.
+- Lowercase letters.
+- Numbers.
+- Occasional punctuation.
+- Different character sizes.
+- A mixture of small, medium and oversized letters.
+
+Use midnight black, charcoal grey and very pale lemon for the characters.
+
+Vary their:
+- Size.
+- Opacity.
+- Rotation.
+- Position.
+- Blur.
+- Spacing.
+
+The arrangement should feel organically art-directed rather than randomly generated.
+
+Some letters should be large enough to create a strong visual identity, while others should be tiny details.
+
+Keep the central area relatively clear so the search interface remains dominant.
+
+### Interactive Letters
+
+The scattered letters should behave similarly to the particle interaction in VEIL.
+
+They must respond to the user's cursor.
+
+Implement:
+
+1. Gentle floating movement when idle.
+2. Cursor-based repulsion.
+3. Direction-sensitive movement.
+4. Slight rotation when displaced.
+5. Organic ripple effects.
+6. Smooth spring-like return to their original positions.
+7. Subtle movement trails where appropriate.
+
+The interaction should feel tactile and satisfying.
+
+Do not simply hide letters using a circular mask. The actual letters must move.
+
+Keep the physics restrained and elegant. The background should never become chaotic or interfere with reading.
+
+On mobile:
+- Support touch interaction.
+- Reduce the number of letters.
+- Reduce movement intensity.
+- Prevent interference with typing and scrolling.
+
+---
+
+## 4. Central Hero Interface
+
+The central search interface is the main attraction.
+
+Use a balanced, vertically centred layout.
+
+### Suggested content
+
+Small introductory label:
+
+`A LITTLE TYPE, A LOT OF PERSONALITY`
+
+Main heading:
+
+**Find the type that feels right.**
+
+Supporting text:
+
+Describe a mood, a brand or an idea. Let AI find the fonts that bring it to life.
+
+### Central search bar
+
+The search bar should be:
+- Large.
+- Rounded.
+- Floating.
+- Minimal.
+- Made from translucent glass.
+- Surrounded by a subtle shadow.
+- Enhanced with backdrop blur.
+- Finished with a fine border.
+
+Include:
+- A text input.
+- A search or arrow button.
+- A subtle lemon accent.
+- A clear placeholder.
+
+Suggested placeholder:
+
+`Try "bold, rebellious, high-impact"...`
+
+### Floating effect
+
+The search bar should have a very subtle vertical floating animation.
+
+It should feel suspended above the white background.
+
+Do not make the movement excessive.
+
+### Prompt suggestions
+
+Below the search bar, include a few small interactive suggestion chips:
+
+- Bold & Impactful
+- Luxury & Elegant
+- Retro & Vintage
+- Futuristic
+- Playful
+
+Clicking a suggestion should populate or submit the search.
+
+### Signature line
+
+Below the search interface:
+
+`Good design starts with the right type.`
+
+Keep the overall composition spacious.
+
+---
+
+## 5. AI Font Recommendation Engine
+
+The AI agent is the functional core of TYPEMUSE.
+
+The user must be able to describe their desired typography in natural language.
+
+The AI should interpret:
+
+- Mood.
+- Brand personality.
+- Visual era.
+- Energy.
+- Typography category.
+- Font weight.
+- Letter width.
+- Geometry.
+- Serif or sans-serif preference.
+- Intended use.
+
+For example, when the user enters:
+
+`A bold, aggressive font for a sports brand`
+
+The agent should understand that suitable characteristics might include:
+- Heavy weight.
+- Condensed proportions.
+- Strong geometric shapes.
+- High visual impact.
+- Good readability in large headlines.
+
+It should then recommend relevant typefaces.
+
+### AI agent workflow
+
+The agent should:
+
+1. Receive the user's theme.
+2. Interpret the design intention.
+3. Identify suitable typographic characteristics.
+4. Consult a verified font catalogue.
+5. Select approximately 4–6 relevant fonts.
+6. Generate a short explanation for each recommendation.
+7. Identify the strongest match.
+8. Return structured results for the interface.
+
+The AI should not return the same handful of fonts for every search.
+
+It should offer meaningful variety.
+
+For example, a luxury theme might include an elegant serif, a refined sans-serif and an alternative display face.
+
+### Suggested data structure
+
+```ts
+type FontRecommendation = {
+  id: string;
+  family: string;
+  category: string;
+  weights: number[];
+  tags: string[];
+  matchReason: string;
+  bestFor: string;
+  previewText: string;
+  sourceUrl?: string;
+  googleFontsFamily?: string;
+  isTopMatch?: boolean;
+};
+
+type FontSearchResponse = {
+  interpretedTheme: string;
+  typographyDirection: string;
+  recommendations: FontRecommendation[];
+};
+```
+
+Adapt the schema where necessary.
+
+### AI requirements
+
+- Recommend real typefaces.
+- Never invent font names or download links.
+- Give meaningful explanations.
+- Avoid repetitive recommendations.
+- Return structured data.
+- Handle vague prompts intelligently.
+- Validate the returned results before displaying them.
+
+### API security
+
+- Keep API keys on the server.
+- Never expose private model-provider keys in frontend code.
+- Use a server-side API route.
+- Validate user input.
+- Validate the model's response.
+- Add loading and error states.
+- Keep the model provider configurable.
+
+If API credentials are unavailable, implement the integration boundary and a clearly labelled development fallback.
+
+Do not pretend a static lookup is a live AI response.
+
+---
+
+## 6. Font Recommendation Cards
+
+After a successful search, display results directly below the hero search interface.
+
+Use approximately 4–6 recommendation cards.
+
+The cards should have a floating glass appearance.
+
+### Card design
+
+Each card should contain:
+
+- Font family name.
+- Font category.
+- Large typography preview.
+- Short AI-generated explanation.
+- Relevant tags.
+- Intended use.
+- Preview action.
+- Copy font name action.
+- Link to the font source, where available.
+
+Use:
+- White glass surfaces.
+- Soft borders.
+- Rounded corners.
+- Subtle shadows.
+- Generous spacing.
+- Minimal lemon highlights.
+
+The strongest recommendation should receive a small:
+
+`BEST MATCH`
+
+label with a lemon background.
+
+Do not make every card equally attention-grabbing.
+
+### Actual font rendering
+
+This is extremely important.
+
+The preview must display the actual recommended font, not simply change the font size or weight of a generic typeface.
+
+Use verified font sources such as Google Fonts.
+
+Load only the font families and weights required.
+
+---
+
+## 7. Live Font Preview
+
+Give the user the ability to edit sample text.
+
+Suggested default:
+
+`The quick brown fox jumps over the lazy dog.`
+
+The user should be able to replace it with:
+
+- A brand name.
+- A headline.
+- A slogan.
+- A short sentence.
+
+Update the visible previews without reloading the page.
+
+Make it easy to compare the different typefaces.
+
+### Useful actions
+
+Keep actions minimal:
+
+- Preview — show a larger font preview.
+- Copy font name — copy the family name.
+- Use this font — open its verified source or usage information.
+- Try another direction — perform another search.
+
+Avoid unnecessary toolbars.
+
+---
+
+## 8. Motion Design
+
+Motion should be subtle and intentional.
+
+Use:
+- Gentle floating animation on the search panel.
+- Organic letter movement.
+- Smooth result-card entrances.
+- Subtle hover elevation.
+- Soft focus transitions.
+- A polished loading animation.
+- Small interactions when selecting prompt suggestions.
+
+The loading animation could involve a few letters gradually aligning or rearranging.
+
+Avoid:
+- Excessive bouncing.
+- Constant large movements.
+- Overly long transitions.
+- Distracting parallax.
+- Animations that make the interface difficult to use.
+
+Respect `prefers-reduced-motion`.
+
+---
+
+## 9. Technical Architecture
+
+First inspect the existing repository.
+
+Preserve existing conventions where sensible.
+
+Preferred stack:
+
+- Next.js.
+- React.
+- TypeScript.
+- Tailwind CSS.
+- Framer Motion or Motion.
+- Canvas or an efficient DOM implementation for interactive letters.
+- Server-side API route for the AI agent.
+- Google Fonts metadata/API or another verified font catalogue.
+
+### Suggested folder structure
+
+```text
+src/
+  app/
+    page.tsx
+    layout.tsx
+    api/
+      fonts/
+        route.ts
+
+  components/
+    hero/
+      HeroSection.tsx
+      HeroHeading.tsx
+      FontSearch.tsx
+      PromptSuggestions.tsx
+
+    typography/
+      FloatingLetters.tsx
+      FontResults.tsx
+      FontCard.tsx
+      FontPreview.tsx
+      SampleTextEditor.tsx
+
+    ui/
+      GlassCard.tsx
+      Button.tsx
+      LoadingState.tsx
+      ErrorState.tsx
+
+  lib/
+    ai/
+      font-agent.ts
+      prompts.ts
+      schemas.ts
+
+    fonts/
+      catalogue.ts
+      loader.ts
+
+  types/
+    fonts.ts
+```
+
+This is a suggested structure. Do not force it into an existing project if a better structure already exists.
+
+### Performance requirements
+
+- Avoid React re-renders for every animated character on every frame.
+- Use requestAnimationFrame where appropriate.
+- Use ResizeObserver.
+- Handle device pixel ratio carefully.
+- Reduce character density on mobile.
+- Pause unnecessary animation when the tab is hidden.
+- Clean up event listeners and animation frames.
+- Lazy-load fonts where possible.
+- Avoid layout shifts when fonts load.
+
+### Accessibility
+
+- Use semantic HTML.
+- Make the search input accessible.
+- Support keyboard submission.
+- Provide visible focus states.
+- Ensure adequate contrast.
+- Hide decorative letters from screen readers.
+- Support reduced-motion preferences.
+- Keep results usable without animation.
+
+---
+
+## 10. Responsive Design
+
+### Desktop
+
+- Full typography background.
+- Central search panel.
+- Spacious hero composition.
+- Balanced result grid.
+
+### Tablet
+
+- Reduce decorative character density.
+- Keep the search panel comfortably sized.
+- Allow cards to wrap naturally.
+
+### Mobile
+
+- Single-column result cards.
+- Reduced background animation.
+- Smaller decorative character count.
+- Comfortable input and button sizes.
+- No overlap between letters and essential interface elements.
+- Smooth scrolling through results.
+
+---
+
+## 11. Things to Avoid
+
+Do not build:
+
+- A multi-page website.
+- A dashboard.
+- A font marketplace.
+- Authentication.
+- Subscription pages.
+- A blog.
+- An unnecessary sidebar.
+- Fake font downloads.
+- Fake AI results presented as real responses.
+- Excessive UI controls.
+- Unnecessary decorative sections.
+
+Keep TYPEMUSE focused on one thing: discovering the right typeface for an idea.
+
+---
+
+## 12. Implementation Phases
+
+Work through the project in the following order.
+
+### Phase 1 — Visual Foundation
+- Inspect the existing repository.
+- Establish the palette.
+- Establish typography.
+- Build the hero layout.
+- Implement the central glass search panel.
+- Ensure the composition looks excellent before adding complex features.
+
+### Phase 2 — Interactive Typography Background
+- Create the scattered letter field.
+- Implement cursor repulsion.
+- Add directional movement.
+- Add subtle rotation and ripple effects.
+- Implement smooth recovery.
+- Add mobile touch support.
+- Test performance.
+
+### Phase 3 — Search Experience
+- Implement the search field.
+- Add prompt suggestions.
+- Add keyboard submission.
+- Add focus and loading states.
+
+### Phase 4 — Font Catalogue and Previews
+- Connect a verified font catalogue.
+- Implement actual font loading.
+- Create recommendation cards.
+- Add editable sample text.
+- Add copy and source actions.
+
+### Phase 5 — AI Agent
+- Build the server-side AI integration.
+- Implement the agent instructions.
+- Connect recommendations to the font catalogue.
+- Validate structured output.
+- Add error handling and fallback behaviour.
+
+### Phase 6 — Final Polish
+- Refine spacing.
+- Refine animations.
+- Test different screen sizes.
+- Test touch and keyboard interaction.
+- Test font loading.
+- Test AI errors.
+- Fix console errors.
+- Optimise performance.
+
+Do not skip testing between phases.
+
+---
+
+## 13. Acceptance Criteria
+
+The project is complete only when:
+
+1. The website opens to a polished white hero page.
+2. Scattered letters frame the central interface.
+3. The letters respond physically to pointer movement.
+4. The letters return smoothly to their original positions.
+5. The search panel floats subtly.
+6. Users can enter natural-language themes.
+7. The AI recommends relevant real typefaces.
+8. Each recommendation displays its actual font.
+9. Each recommendation includes a useful explanation.
+10. Users can edit preview text.
+11. The website works on desktop, tablet and mobile.
+12. AI errors are handled honestly.
+13. The interface remains minimal and accessible.
+14. The experience feels like a premium typography product.
+
+---
+
+## 14. Final Creative Instruction
+
+Think of TYPEMUSE as a small interactive design instrument.
+
+The scattered letters establish the identity.
+
+The floating search panel is the focal point.
+
+The AI recommendations are the payoff.
+
+When someone opens TYPEMUSE, the first impression should be a clean white canvas, beautifully scattered typography, a confident central search panel and just enough lemon to make the experience distinctive.
+
+Make the typography expressive.
+
+Make the interactions feel alive.
+
+Keep the interface minimal.
+
+**Build a complete, working experience — not just a static mock-up.** Ensure smooth animations when exploring font pairings and hover states.

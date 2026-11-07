@@ -1,0 +1,6 @@
+{
+  "name": "TYPEMUSE — AI Font Theme Finder",
+  "description": "Minimalist typography playground and AI font discovery engine. Explore tactile floating typography and find the perfect typefaces matching your mood, aesthetic, and brand direction.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
