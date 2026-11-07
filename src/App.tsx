@@ -7,6 +7,7 @@ import { InfoModal } from './components/modals/InfoModal';
 import { FontSearchResponse } from './types/fonts';
 import { preloadFontBatch } from './lib/fonts/loader';
 import { ThemeMode } from './components/layout/ThemeToggle';
+import { generateClientFontRecommendations } from './lib/fonts/clientEngine';
 import { Loader2 } from 'lucide-react';
 
 const RANDOM_MOODS = [
@@ -138,17 +139,31 @@ export default function App() {
     }
 
     try {
-      const response = await fetch('/api/recommend-fonts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ theme: searchTheme.trim(), count: 6 }),
-      });
+      let data: FontSearchResponse | null = null;
 
-      if (!response.ok) {
-        throw new Error(`Server returned ${response.status}: ${response.statusText}`);
+      // 1. Try server-side API endpoint first (works on full-stack, Vercel serverless, etc.)
+      try {
+        const response = await fetch('/api/recommend-fonts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ theme: searchTheme.trim(), count: 6 }),
+        });
+
+        if (response.ok) {
+          data = await response.json();
+        } else {
+          console.warn(`Server responded with ${response.status}; engaging client typography engine.`);
+        }
+      } catch (networkErr) {
+        console.warn('Backend unavailable; switching to client typography engine:', networkErr);
       }
 
-      const data: FontSearchResponse = await response.json();
+      // 2. Seamless client fallback: if backend returned 404 or host is static (GitHub Pages, Netlify, etc.),
+      // immediately generate matching fonts using the built-in verified typography engine with zero errors!
+      if (!data || !data.recommendations || data.recommendations.length === 0) {
+        data = generateClientFontRecommendations(searchTheme.trim(), 6);
+      }
+
       setResults(data);
 
       // Preload recommended fonts in the background
@@ -161,12 +176,15 @@ export default function App() {
         resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 150);
     } catch (err: any) {
-      console.error('Failed to search fonts:', err);
-      setError(err?.message || 'Failed to fetch recommendations. Please try again.');
+      console.error('Typographic search fallback triggered:', err);
+      const fallback = generateClientFontRecommendations(searchTheme.trim(), 6);
+      setResults(fallback);
+      preloadFontBatch(fallback.recommendations);
     } finally {
       setIsLoading(false);
     }
   };
+
 
   // URL query parameter check on initial mount
   useEffect(() => {
