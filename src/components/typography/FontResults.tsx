@@ -11,16 +11,16 @@ interface FontResultsProps {
 
 export const FontResults: React.FC<FontResultsProps> = ({ data }) => {
   const [sampleText, setSampleText] = useState('');
-  const [fontSize, setFontSize] = useState(32);
+  const [fontSize, setFontSize] = useState(30);
   const [selectedFont, setSelectedFont] = useState<FontRecommendation | null>(null);
 
   return (
-    <section className="w-full max-w-6xl mx-auto mt-12 sm:mt-16 space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <section className="w-full max-w-6xl mx-auto mt-8 sm:mt-16 space-y-6 sm:space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       {/* Editorial Direction Banner */}
-      <div className="bg-white/80 dark:bg-[#16181E]/85 backdrop-blur-xl border border-[#101116]/08 dark:border-white/10 rounded-3xl p-6 sm:p-8 shadow-[0_16px_40px_rgba(16,17,22,0.04)] dark:shadow-[0_16px_40px_rgba(0,0,0,0.4)]">
-        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+      <div className="bg-white/85 dark:bg-[#16181E]/90 backdrop-blur-xl border border-[#101116]/08 dark:border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-[0_12px_32px_rgba(16,17,22,0.04)] dark:shadow-[0_12px_32px_rgba(0,0,0,0.4)] text-left">
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 sm:gap-6">
           <div className="space-y-2 flex-1">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <span className="flex items-center gap-1.5 text-xs font-mono-code uppercase tracking-wider text-[#101116] dark:text-[#F4F36A] font-semibold">
                 <Compass className="w-3.5 h-3.5 text-[#101116] dark:text-[#F4F36A]" />
                 Typographic Direction
@@ -31,13 +31,13 @@ export const FontResults: React.FC<FontResultsProps> = ({ data }) => {
               </span>
             </div>
 
-            <p className="text-base sm:text-lg text-[#101116] dark:text-neutral-100 leading-relaxed font-sans max-w-3xl">
+            <p className="text-sm sm:text-base md:text-lg text-[#101116] dark:text-neutral-100 leading-relaxed font-sans max-w-3xl">
               {data.typographyDirection}
             </p>
           </div>
 
           {data.isFallback && (
-            <div className="flex items-start gap-2.5 p-3.5 bg-[#FBFBCB]/60 dark:bg-[#F4F36A]/15 border border-[#F4F36A]/50 dark:border-[#F4F36A]/30 rounded-2xl max-w-sm text-xs text-[#101116] dark:text-white shrink-0">
+            <div className="flex items-start gap-2 p-3 bg-[#FBFBCB]/60 dark:bg-[#F4F36A]/15 border border-[#F4F36A]/50 dark:border-[#F4F36A]/30 rounded-xl sm:rounded-2xl max-w-sm text-xs text-[#101116] dark:text-white shrink-0">
               <Info className="w-4 h-4 text-[#101116] dark:text-[#F4F36A] shrink-0 mt-0.5" />
               <div>
                 <span className="font-semibold block">Curated Catalogue Mode</span>
@@ -60,7 +60,7 @@ export const FontResults: React.FC<FontResultsProps> = ({ data }) => {
       />
 
       {/* Font Recommendation Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-left">
         {data.recommendations.map(font => (
           <FontCard
             key={font.id || font.family}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Copy, Check, ExternalLink, Eye, ArrowUpRight } from 'lucide-react';
+import { Copy, Check, Eye, ArrowUpRight } from 'lucide-react';
 import { FontRecommendation } from '../../types/fonts';
 import { loadGoogleFont, getGoogleFontsSpecimenUrl } from '../../lib/fonts/loader';
 
@@ -36,41 +36,41 @@ export const FontCard: React.FC<FontCardProps> = ({ font, sampleText, fontSize, 
   return (
     <div
       onClick={() => onInspect(font)}
-      className={`group relative flex flex-col justify-between rounded-3xl p-6 sm:p-7 transition-all duration-300 cursor-pointer ${
+      className={`group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-5 sm:p-7 transition-all duration-300 cursor-pointer ${
         font.isTopMatch
-          ? 'bg-white/95 dark:bg-[#1A1D26]/95 border-2 border-[#101116]/15 dark:border-white/20 shadow-[0_20px_48px_rgba(16,17,22,0.08)] dark:shadow-[0_20px_48px_rgba(0,0,0,0.45)] ring-4 ring-[#F4F36A]/30 dark:ring-[#F4F36A]/20'
-          : 'bg-white/80 dark:bg-[#15171F]/80 hover:bg-white/95 dark:hover:bg-[#1A1D26]/90 border border-[#101116]/08 dark:border-white/10 hover:border-[#101116]/15 dark:hover:border-white/20 shadow-[0_12px_32px_rgba(16,17,22,0.04)] dark:shadow-[0_12px_32px_rgba(0,0,0,0.35)] hover:shadow-[0_20px_40px_rgba(16,17,22,0.07)] dark:hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)]'
-      } backdrop-blur-xl hover:-translate-y-1`}
+          ? 'bg-white/95 dark:bg-[#1A1D26]/95 border-2 border-[#101116]/15 dark:border-white/20 shadow-[0_16px_36px_rgba(16,17,22,0.06)] dark:shadow-[0_16px_36px_rgba(0,0,0,0.4)] ring-2 sm:ring-4 ring-[#F4F36A]/30 dark:ring-[#F4F36A]/20'
+          : 'bg-white/80 dark:bg-[#15171F]/80 hover:bg-white/95 dark:hover:bg-[#1A1D26]/90 border border-[#101116]/08 dark:border-white/10 hover:border-[#101116]/15 dark:hover:border-white/20 shadow-[0_8px_24px_rgba(16,17,22,0.03)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.3)] hover:shadow-[0_16px_32px_rgba(16,17,22,0.06)] dark:hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)]'
+      } backdrop-blur-xl hover:-translate-y-0.5 sm:hover:-translate-y-1`}
     >
       {/* Top Header Row */}
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2 flex-wrap mb-1.5">
-            <span className="text-xs font-mono-code uppercase tracking-wider text-[#777982] dark:text-neutral-400">
+          <div className="flex items-center gap-1.5 flex-wrap mb-1">
+            <span className="text-[11px] sm:text-xs font-mono-code uppercase tracking-wider text-[#777982] dark:text-neutral-400">
               {font.category}
             </span>
 
             {font.isTopMatch && (
               <>
                 <span className="text-[#777982] dark:text-neutral-500 text-xs">·</span>
-                <span className="bg-[#F4F36A] text-[#101116] text-[10px] font-bold px-2.5 py-0.5 rounded-full tracking-wider uppercase">
+                <span className="bg-[#F4F36A] text-[#101116] text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wider uppercase">
                   Best Match
                 </span>
               </>
             )}
           </div>
 
-          <h3 className="text-2xl font-bold text-[#101116] dark:text-white tracking-tight group-hover:text-black dark:group-hover:text-white transition-colors truncate">
+          <h3 className="text-xl sm:text-2xl font-bold text-[#101116] dark:text-white tracking-tight group-hover:text-black dark:group-hover:text-white transition-colors truncate">
             {font.family}
           </h3>
         </div>
 
-        {/* Quick Action Buttons */}
-        <div className="flex items-center gap-1.5 shrink-0" onClick={e => e.stopPropagation()}>
+        {/* Quick Action Buttons with Mobile-Friendly Hitboxes (min 40x40px) */}
+        <div className="flex items-center gap-1 shrink-0" onClick={e => e.stopPropagation()}>
           <button
             onClick={handleCopyName}
             title="Copy font family name"
-            className="p-2 text-[#777982] dark:text-neutral-400 hover:text-[#101116] dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-xl transition-all cursor-pointer"
+            className="w-10 h-10 flex items-center justify-center text-[#777982] dark:text-neutral-400 hover:text-[#101116] dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-xl transition-all cursor-pointer"
             aria-label={`Copy ${font.family}`}
           >
             {copied ? (
@@ -85,7 +85,7 @@ export const FontCard: React.FC<FontCardProps> = ({ font, sampleText, fontSize, 
             target="_blank"
             rel="noopener noreferrer"
             title="Open on Google Fonts"
-            className="p-2 text-[#777982] dark:text-neutral-400 hover:text-[#101116] dark:hover:text-white hover:bg-[#F4F36A]/60 dark:hover:bg-[#F4F36A] dark:hover:text-[#101116] rounded-xl transition-all cursor-pointer"
+            className="w-10 h-10 flex items-center justify-center text-[#777982] dark:text-neutral-400 hover:text-[#101116] dark:hover:text-white hover:bg-[#F4F36A]/60 dark:hover:bg-[#F4F36A] dark:hover:text-[#101116] rounded-xl transition-all cursor-pointer"
             aria-label={`Open ${font.family} on Google Fonts`}
           >
             <ArrowUpRight className="w-4 h-4" />
@@ -93,12 +93,12 @@ export const FontCard: React.FC<FontCardProps> = ({ font, sampleText, fontSize, 
         </div>
       </div>
 
-      {/* Actual Live Typography Preview */}
-      <div className="my-6 min-h-[110px] flex items-center justify-start overflow-hidden py-3 border-y border-[#101116]/05 dark:border-white/08">
+      {/* Actual Live Typography Preview with Responsive Scaling */}
+      <div className="my-4 sm:my-6 min-h-[90px] sm:min-h-[110px] flex items-center justify-start overflow-hidden py-2 sm:py-3 border-y border-[#101116]/05 dark:border-white/08">
         <p
           style={{
             fontFamily: fontLoaded ? `"${font.family}", sans-serif` : 'system-ui',
-            fontSize: `${fontSize}px`,
+            fontSize: `clamp(18px, ${fontSize * 0.8}px, ${fontSize}px)`,
             lineHeight: 1.25,
             transition: 'opacity 0.2s ease',
             opacity: fontLoaded ? 1 : 0.4,
@@ -110,35 +110,35 @@ export const FontCard: React.FC<FontCardProps> = ({ font, sampleText, fontSize, 
       </div>
 
       {/* Match Rationale & Details */}
-      <div className="space-y-3">
+      <div className="space-y-2.5">
         <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed line-clamp-2">
           {font.matchReason}
         </p>
 
-        {/* Clean Unboxed Metadata (following anti-slop rules: no pill enclosures) */}
-        <div className="flex items-center gap-2 flex-wrap text-xs text-[#777982] dark:text-neutral-400">
+        {/* Clean Unboxed Metadata */}
+        <div className="flex items-center gap-1.5 flex-wrap text-xs text-[#777982] dark:text-neutral-400">
           <span className="font-medium text-[#101116]/80 dark:text-neutral-200">{font.bestFor}</span>
           {font.tags && font.tags.length > 0 && (
             <>
               <span aria-hidden="true">·</span>
-              <span>{font.tags.slice(0, 3).join(' / ')}</span>
+              <span className="truncate max-w-[200px]">{font.tags.slice(0, 3).join(' / ')}</span>
             </>
           )}
         </div>
       </div>
 
       {/* Bottom Bar: Inspect CTA */}
-      <div className="mt-5 pt-4 border-t border-[#101116]/06 dark:border-white/08 flex items-center justify-between text-xs font-medium">
+      <div className="mt-4 sm:mt-5 pt-3.5 sm:pt-4 border-t border-[#101116]/06 dark:border-white/08 flex items-center justify-between text-xs font-medium">
         <button
           onClick={() => onInspect(font)}
-          className="inline-flex items-center gap-1.5 text-[#101116] dark:text-white group-hover:underline underline-offset-4 font-semibold cursor-pointer"
+          className="inline-flex items-center gap-1.5 text-[#101116] dark:text-white group-hover:underline underline-offset-4 font-semibold cursor-pointer py-1"
         >
           <Eye className="w-3.5 h-3.5 text-[#777982] dark:text-neutral-400" />
-          Inspect Specimen & Pairings
+          <span>Inspect Specimen</span>
         </button>
 
-        <span className="text-[11px] font-mono-code text-[#777982] dark:text-neutral-400">
-          {font.weights?.length ? `${font.weights.length} weights` : 'Regular / Bold'}
+        <span className="text-[10px] sm:text-[11px] font-mono-code text-[#777982] dark:text-neutral-400">
+          {font.weights?.length ? `${font.weights.length} weights` : 'Regular'}
         </span>
       </div>
     </div>

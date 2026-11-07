@@ -43,21 +43,21 @@ export const InfoModal: React.FC<InfoModalProps> = ({ type, onClose, onSelectThe
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#101116]/40 dark:bg-black/70 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#101116]/50 dark:bg-black/75 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-white/95 dark:bg-[#14161D]/95 backdrop-blur-2xl border border-[#101116]/10 dark:border-white/10 rounded-3xl shadow-[0_32px_64px_rgba(16,17,22,0.14)] dark:shadow-[0_32px_64px_rgba(0,0,0,0.5)] p-6 sm:p-8"
+        className="relative w-full max-w-2xl max-h-[88vh] overflow-y-auto bg-white/95 dark:bg-[#14161D]/95 backdrop-blur-2xl border border-[#101116]/10 dark:border-white/10 rounded-2xl sm:rounded-3xl shadow-[0_32px_64px_rgba(16,17,22,0.18)] dark:shadow-[0_32px_64px_rgba(0,0,0,0.6)] p-4 sm:p-8"
         onClick={e => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-[#101116]/08 dark:border-white/10">
-          <div className="flex items-center gap-2">
-            {type === 'curated' && <Compass className="w-4 h-4 text-[#101116] dark:text-[#F4F36A]" />}
-            {type === 'specimens' && <BookOpen className="w-4 h-4 text-[#101116] dark:text-[#F4F36A]" />}
-            {type === 'pairings' && <Layers className="w-4 h-4 text-[#101116] dark:text-[#F4F36A]" />}
-            {type === 'philosophy' && <Heart className="w-4 h-4 text-[#101116] dark:text-[#F4F36A]" />}
-            <h3 className="text-xl font-bold text-[#101116] dark:text-white">
+        <div className="flex items-center justify-between pb-4 border-b border-[#101116]/08 dark:border-white/10 gap-3">
+          <div className="flex items-center gap-2 min-w-0">
+            {type === 'curated' && <Compass className="w-4 h-4 text-[#101116] dark:text-[#F4F36A] shrink-0" />}
+            {type === 'specimens' && <BookOpen className="w-4 h-4 text-[#101116] dark:text-[#F4F36A] shrink-0" />}
+            {type === 'pairings' && <Layers className="w-4 h-4 text-[#101116] dark:text-[#F4F36A] shrink-0" />}
+            {type === 'philosophy' && <Heart className="w-4 h-4 text-[#101116] dark:text-[#F4F36A] shrink-0" />}
+            <h3 className="text-base sm:text-xl font-bold text-[#101116] dark:text-white truncate">
               {type === 'curated' && 'Curated Typographic Themes'}
               {type === 'specimens' && 'Verified Font Catalogue Specimens'}
               {type === 'pairings' && 'The Science of Font Pairing'}
@@ -67,10 +67,10 @@ export const InfoModal: React.FC<InfoModalProps> = ({ type, onClose, onSelectThe
 
           <button
             onClick={onClose}
-            className="p-2 text-[#777982] hover:text-[#101116] dark:text-neutral-400 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-xl transition-colors cursor-pointer"
+            className="flex items-center justify-center w-9 h-9 text-[#777982] hover:text-[#101116] dark:text-neutral-400 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-xl transition-colors shrink-0 cursor-pointer"
             aria-label="Close"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4" />
           </button>
         </div>
 

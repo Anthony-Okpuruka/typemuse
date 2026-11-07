@@ -218,20 +218,20 @@ export default function App() {
       />
 
       {/* 3. Main Central Hero Section */}
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-12 sm:py-20 max-w-5xl mx-auto w-full text-center">
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-3.5 sm:px-6 py-6 sm:py-16 md:py-20 max-w-5xl mx-auto w-full text-center">
 
         {/* Hero Heading */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#101116] dark:text-white tracking-tight leading-[1.08] max-w-3xl mb-5 font-brand text-balance">
+        <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-[#101116] dark:text-white tracking-tight leading-[1.1] max-w-3xl mb-3 sm:mb-5 font-brand text-balance">
           Find the type that feels right.
         </h1>
 
         {/* Supporting Copy */}
-        <p className="text-base sm:text-xl text-[#777982] dark:text-neutral-400 max-w-xl mx-auto mb-10 leading-relaxed font-normal">
+        <p className="text-sm sm:text-lg md:text-xl text-[#777982] dark:text-neutral-400 max-w-xl mx-auto mb-6 sm:mb-10 leading-relaxed font-normal">
           Describe a mood, a brand or an idea. Let AI find the fonts that bring it to life.
         </p>
 
         {/* Central Floating Search Bar with Subtle Suspension Animation */}
-        <div className="w-full transition-transform duration-700 ease-in-out hover:-translate-y-0.5">
+        <div className="w-full transition-transform duration-700 ease-in-out sm:hover:-translate-y-0.5">
           <FontSearch
             ref={searchInputRef}
             onSearch={handleSearch}
@@ -242,10 +242,10 @@ export default function App() {
 
         {/* Loading Indicator with Animated Typographic Sequence */}
         {isLoading && (
-          <div className="mt-12 flex flex-col items-center gap-3 animate-in fade-in duration-200">
-            <div className="flex items-center gap-2 px-4 py-2 bg-white/90 dark:bg-[#16181E]/90 backdrop-blur-md rounded-2xl border border-[#101116]/10 dark:border-white/10 shadow-sm">
-              <Loader2 className="w-4 h-4 animate-spin text-[#101116] dark:text-[#F4F36A]" />
-              <span className="text-xs font-mono-code text-[#101116] dark:text-neutral-200 font-medium">
+          <div className="mt-8 sm:mt-12 flex flex-col items-center gap-3 animate-in fade-in duration-200">
+            <div className="flex items-center gap-2 px-3.5 py-2 bg-white/90 dark:bg-[#16181E]/90 backdrop-blur-md rounded-2xl border border-[#101116]/10 dark:border-white/10 shadow-sm max-w-[90vw]">
+              <Loader2 className="w-4 h-4 animate-spin text-[#101116] dark:text-[#F4F36A] shrink-0" />
+              <span className="text-[11px] sm:text-xs font-mono-code text-[#101116] dark:text-neutral-200 font-medium truncate">
                 Analyzing typography proportions, weights & contrast...
               </span>
             </div>
@@ -254,7 +254,7 @@ export default function App() {
 
         {/* Error Notification */}
         {error && (
-          <div className="mt-8 p-4 bg-red-50/90 dark:bg-red-950/40 border border-red-200/80 dark:border-red-900/60 rounded-2xl text-xs text-red-700 dark:text-red-300 max-w-md mx-auto text-left">
+          <div className="mt-6 sm:mt-8 p-3.5 sm:p-4 bg-red-50/90 dark:bg-red-950/40 border border-red-200/80 dark:border-red-900/60 rounded-2xl text-xs text-red-700 dark:text-red-300 max-w-md mx-auto text-left">
             <span className="font-bold block mb-1">Notice</span>
             {error}
           </div>
@@ -268,30 +268,30 @@ export default function App() {
         </div>
 
         {/* Signature Line */}
-        <div className="mt-16 sm:mt-24 pt-8 text-xs font-mono-code text-[#777982] dark:text-neutral-500 tracking-wider uppercase border-t border-[#101116]/05 dark:border-white/06 w-full max-w-sm mx-auto">
+        <div className="mt-12 sm:mt-24 pt-6 sm:pt-8 text-[11px] sm:text-xs font-mono-code text-[#777982] dark:text-neutral-500 tracking-wider uppercase border-t border-[#101116]/05 dark:border-white/06 w-full max-w-sm mx-auto">
           Good design starts with the right type.
         </div>
       </main>
 
       {/* 4. Minimal Footer */}
-      <footer className="relative z-10 py-6 px-6 sm:px-10 border-t border-[#101116]/06 dark:border-white/08 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#777982] dark:text-neutral-400 max-w-7xl mx-auto w-full">
+      <footer className="relative z-10 py-5 px-4 sm:px-10 border-t border-[#101116]/06 dark:border-white/08 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#777982] dark:text-neutral-400 max-w-7xl mx-auto w-full">
         <div className="flex items-center gap-2">
           <span className="font-brand font-bold text-[#101116] dark:text-white">TYPEMUSE</span>
           <span>—</span>
           <span>AI Font Discovery Engine</span>
         </div>
 
-        <div className="flex items-center gap-4 text-xs">
+        <div className="flex items-center gap-3 sm:gap-4 text-xs">
           <button
             onClick={() => setActiveModal('specimens')}
-            className="hover:text-[#101116] dark:hover:text-white transition-colors cursor-pointer"
+            className="hover:text-[#101116] dark:hover:text-white transition-colors cursor-pointer py-1"
           >
             Google Fonts Verified
           </button>
           <span>·</span>
           <button
             onClick={() => setActiveModal('pairings')}
-            className="hover:text-[#101116] dark:hover:text-white transition-colors cursor-pointer"
+            className="hover:text-[#101116] dark:hover:text-white transition-colors cursor-pointer py-1"
           >
             Pairing Harmony
           </button>
